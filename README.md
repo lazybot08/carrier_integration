@@ -1,4 +1,5 @@
 Carrier Integration System
+
 This project is a Carrier Integration System designed to manage shipments, tracking, and quotes for a logistics company. It provides APIs for creating shipments, tracking their status, and obtaining quotes.
 
 Features:
@@ -28,15 +29,11 @@ MongoDB or any other supported database installed and running
 Steps to Run:
 Clone the repository to your local machine:
 git clone https://github.com/lazybot08/carrier_integration.git
-
 Navigate to the project directory:
 cd carrier-integration-system
-
 Update the application.properties file in the src/main/resources directory with your MongoDB configurations.
-
 Build and run the project using Maven:
 mvn clean spring-boot:run
-
 Access the APIs using a REST client or browser at the following base URL:
 http://localhost:8080/
 
