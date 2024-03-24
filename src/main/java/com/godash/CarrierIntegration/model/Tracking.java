@@ -1,9 +1,16 @@
 package com.godash.CarrierIntegration.model;
 
+import org.springframework.data.annotation.Id;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 public class Tracking {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String trackingId;
     
     private String shipmentId;
     private String status;
@@ -13,6 +20,10 @@ public class Tracking {
     // Constructors, getters, and setters
     
     public Tracking() {
+    }
+    
+    public String getTrackingId() {
+        return trackingId;
     }
 
     public String getShipmentId() {

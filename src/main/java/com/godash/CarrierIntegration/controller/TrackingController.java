@@ -31,7 +31,7 @@ public class TrackingController {
     @GetMapping("/{id}")
     public ResponseEntity<Tracking> getTrackingById(@PathVariable String id) {
         try {
-            Optional<Tracking> optionalTracking = trackingRepository.findByShipmentId(id);
+            Optional<Tracking> optionalTracking = trackingRepository.findById(id);
             if (optionalTracking.isPresent()) {
                 return ResponseEntity.ok(optionalTracking.get());
             } else {
@@ -46,7 +46,7 @@ public class TrackingController {
     @PutMapping("/{id}")
     public ResponseEntity<Tracking> updateTrackingById(@PathVariable String id, @RequestBody Tracking updatedTracking) {
         try {
-            Optional<Tracking> optionalTracking = trackingRepository.findByShipmentId(id);
+            Optional<Tracking> optionalTracking = trackingRepository.findById(id);
             if (optionalTracking.isPresent()) {
                 Tracking existingTracking = optionalTracking.get();
                 existingTracking.setStatus(updatedTracking.getStatus());
